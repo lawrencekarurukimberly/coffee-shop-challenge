@@ -1,11 +1,12 @@
+from order import Order
+
+
 class Customer:
     _all = []
 
     def __init__(self, name):
-        if not isinstance(name, str) or not 1 <= len(name) <= 15:
-            raise ValueError("Name must be a string between 1 and 15 characters")
-        self._name = name
-        Customer._all.append(self)
+        self.name = name
+        self._all.append(self)
 
     @property
     def name(self):
@@ -13,8 +14,10 @@ class Customer:
 
     @name.setter
     def name(self, value):
-        if not isinstance(value, str) or not 1 <= len(value) <= 15:
-            raise ValueError("Name must be a string between 1 and 15 characters")
+        if not isinstance(value, str):
+            raise ValueError("Name must be a string")
+        if not 1 <= len(value) <= 15:
+            raise ValueError("Name must be 1–15 characters")
         self._name = value
 
     def orders(self):
@@ -30,7 +33,8 @@ class Customer:
     def most_aficionado(cls, coffee):
         if not coffee.orders():
             return None
-        customer_totals = {}
+        customer_spending = {}
         for order in coffee.orders():
-            customer_totals[order.customer] = customer_totals.get(order.customer, 0) + order.price
-        return max(customer_totals.items(), key=lambda x: x[1])[0]
+            customer = order.customer
+            customer_spending[customer] = customer_spending.get(customer, 0) + order.price
+        return max(customer_spending.items(), key=lambda x: x[1])[0]
