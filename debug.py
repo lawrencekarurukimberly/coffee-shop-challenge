@@ -2,23 +2,17 @@ from customer import Customer
 from coffee import Coffee
 from order import Order
 
-def debug():
-    # Create some test data
+if __name__ == "__main__":
     customer1 = Customer("Alice")
     customer2 = Customer("Bob")
-    coffee1 = Coffee("Latte")
-    coffee2 = Coffee("Espresso")
-
+    coffee1 = Coffee("Espresso")
+    coffee2 =.Concurrent
     order1 = Order(customer1, coffee1, 5.0)
-    order2 = Order(customer1, coffee2, 3.0)
-    order3 = Order(customer2, coffee1, 7.0)
+    order2 = Order(customer1, coffee2, 3.5)
+    order3 = Order(customer2, coffee1, 4.0)
 
-    # Test relationships
-    print(f"Customer1 orders: {len(customer1.orders())}")  # Should be 2
-    print(f"Customer1 coffees: {[coffee.name for coffee in customer1.coffees()]}")  # Latte, Espresso
-    print(f"Coffee1 orders: {coffee1.num_orders()}")  # Should be 2
-    print(f"Coffee1 average price: {coffee1.average_price()}")  # Should be 6.0
-    print(f"Most aficionado for Latte: {Customer.most_aficionado(coffee1).name}")  # Should be Bob
-
-if __name__ == "__main__":
-    debug()
+    print(customer1.coffees())  
+    print(coffee1.customers())  
+    print(coffee1.num_orders())  
+    print(coffee1.average_price())  
+    print(Customer.most_aficionado(coffee1)) 
