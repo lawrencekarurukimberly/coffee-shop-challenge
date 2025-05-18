@@ -6,7 +6,7 @@ if __name__ == "__main__":
     customer1 = Customer("Alice")
     customer2 = Customer("Bob")
     coffee1 = Coffee("Espresso")
-    coffee2 = Coffee("Latte") 
+    coffee2 = Coffee("Latte")
     order1 = Order(customer1, coffee1, 5.0)
     order2 = Order(customer1, coffee2, 3.5)
     order3 = Order(customer2, coffee1, 4.0)
