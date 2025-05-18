@@ -38,4 +38,4 @@ def test_order_price_immutable():
     coffee = Coffee("Espresso")
     order = Order(customer, coffee, 4.0)
     with pytest.raises(AttributeError):
-        order.price = 6.0  
+        order.price = 6.0
