@@ -12,11 +12,13 @@ def test_order_init():
     assert order.coffee == coffee
     assert order.price == 5.0
     with pytest.raises(ValueError):
-        Order(customer, coffee, 11.0) 
+        Order(customer, coffee, 11.0)
     with pytest.raises(ValueError):
-        Order(customer, coffee, "5.0") 
+        Order(customer, coffee, "5.0")
     with pytest.raises(ValueError):
-        Order("Not a customer", coffee, 5.0)  
+        Order("Not a customer", coffee, 5.0)
+    with pytest.raises(ValueError):
+        Order(customer, "Not a coffee", 5.0)
 
 
 def test_price_immutable():
@@ -24,4 +26,4 @@ def test_price_immutable():
     coffee = Coffee("Espresso")
     order = Order(customer, coffee, 4.0)
     with pytest.raises(AttributeError):
-        order.price = 5.0  
+        order.price = 5.0

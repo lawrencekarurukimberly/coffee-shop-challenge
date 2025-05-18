@@ -8,11 +8,11 @@ def test_customer_name():
     customer = Customer("Alice")
     assert customer.name == "Alice"
     with pytest.raises(ValueError):
-        customer.name = "" 
+        customer.name = ""
     with pytest.raises(ValueError):
-        customer.name = "A" * 16  
+        customer.name = "A" * 16
     with pytest.raises(ValueError):
-        customer.name = 123 
+        customer.name = 123
 
 
 def test_customer_orders():

@@ -8,11 +8,11 @@ def test_coffee_name():
     coffee = Coffee("Latte")
     assert coffee.name == "Latte"
     with pytest.raises(AttributeError):
-        coffee.name = "Mocha" 
+        coffee.name = "Mocha"
     with pytest.raises(ValueError):
-        Coffee("Ab") 
+        Coffee("Ab")
     with pytest.raises(ValueError):
-        Coffee(123)  
+        Coffee(123)
 
 
 def test_coffee_orders():
