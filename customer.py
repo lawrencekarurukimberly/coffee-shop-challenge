@@ -1,12 +1,11 @@
 from order import Order
 
-
 class Customer:
     _all = []
 
     def __init__(self, name):
         self.name = name
-        self._all.append(self)
+        Customer._all.append(self)
 
     @property
     def name(self):
