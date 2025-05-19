@@ -75,6 +75,7 @@ coffee-shop-challenge/
 ### Running Tests
 ```bash
 python -m pytest tests/ -v
-
+```
 ### Running the Debug Script
+```bash
 python debug.py
