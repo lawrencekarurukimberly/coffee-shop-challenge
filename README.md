@@ -30,7 +30,7 @@ The **Coffee Shop Challenge** is a Python project developed for the SA Code Chal
 ### Debug Script
 - A script to manually test functionality and demonstrate relationships.
 
-## Project Structure
+### Project Structure
 
 coffee-shop-challenge/
 ├── Pipfile
@@ -53,13 +53,13 @@ coffee-shop-challenge/
 - `order.py`: Implements the `Order` class.
 - `tests/`: Contains unit tests for each class.
 
-## Requirements
+### Requirements
 
 - **Python**: Version 3.8 or higher  
 - **Pipenv**: For managing virtual environments and dependencies  
 - **pytest**: For running unit tests
 
-## Setup Instructions
+### Setup Instructions
 
 1. **Clone the Repository:**
    ```bash
@@ -70,8 +70,8 @@ pipenv install
 3. **Activate the Virtual Environment:**
 pipenv shell
 
-## Running Tests
+### Running Tests
 python -m pytest tests/ -v
 
-## Running the Debug Script
+### Running the Debug Script
 python debug.py
