@@ -1,39 +1,77 @@
-# Coffee Shop Code Challenge
+# Coffee Shop Challenge
 
-This is a Python project implementing a Coffee Shop domain with object relationships between `Customer`, `Coffee`, and `Order` classes.
-
----
-
-## Project Overview
-
-The goal of this challenge is to model a coffee shop system that manages customers, coffee products, and orders with the following relationships:
-
-- A **Customer** can place many **Orders**.
-- A **Coffee** product can have many **Orders**.
-- An **Order** belongs to one **Customer** and one **Coffee**.
-- Thus, **Coffee** and **Customer** share a many-to-many relationship via **Orders**.
-
----
+## Overview
+The **Coffee Shop Challenge** is a Python project developed for the SA Code Challenge. It implements a coffee shop domain model with three core classes: `Customer`, `Coffee`, and `Order`. The project demonstrates object-oriented programming principles, including encapsulation, properties, relationships, and aggregate methods. It includes unit tests to verify functionality and a debug script for manual testing.
 
 ## Features
 
-- Proper initialization and validation of attributes for each model.
-- Object relationship methods that allow querying orders, coffees, and customers.
-- Aggregate methods to calculate stats like number of orders and average price.
-- Bonus feature: Identify the customer who spent the most on a specific coffee.
+### Customer Class
+- Manages customer names (1–15 characters, string).
+- Tracks orders and unique coffees ordered.
+- Supports creating new orders and finding the customer who spent the most on a specific coffee.
 
----
+### Coffee Class
+- Manages coffee names (≥3 characters, string, immutable).
+- Tracks orders and unique customers.
+- Calculates the number of orders and average order price.
+
+### Order Class
+- Links customers and coffees with a price (1.0–10.0, float, immutable).
+- Provides access to customer and coffee instances.
+
+### Relationships
+- Customers can have multiple orders for different coffees.
+- Coffees can be ordered by multiple customers.
+- Orders connect one customer to one coffee with a specific price.
+
+### Tests
+- Comprehensive unit tests for all classes using `pytest`.
+
+### Debug Script
+- A script to manually test functionality and demonstrate relationships.
 
 ## Project Structure
 
 coffee-shop-challenge/
 ├── Pipfile
+├── README.md
+├── debug.py
 ├── customer.py
 ├── coffee.py
 ├── order.py
-├── debug.py
 └── tests/
 ├── customer_test.py
 ├── coffee_test.py
 └── order_test.py
 
+
+- `Pipfile`: Specifies project dependencies (pytest).
+- `README.md`: Project documentation (this file).
+- `debug.py`: Script for manual testing of classes and methods.
+- `customer.py`: Implements the `Customer` class.
+- `coffee.py`: Implements the `Coffee` class.
+- `order.py`: Implements the `Order` class.
+- `tests/`: Contains unit tests for each class.
+
+## Requirements
+
+- **Python**: Version 3.8 or higher  
+- **Pipenv**: For managing virtual environments and dependencies  
+- **pytest**: For running unit tests
+
+## Setup Instructions
+
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository-url>
+   cd coffee-shop-challenge
+2. **Install Dependencies:**
+pipenv install
+3. **Activate the Virtual Environment:**
+pipenv shell
+
+## Running Tests
+python -m pytest tests/ -v
+
+## Running the Debug Script
+python debug.py
