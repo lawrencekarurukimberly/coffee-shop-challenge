@@ -66,11 +66,14 @@ coffee-shop-challenge/
    git clone <repository-url>
    cd coffee-shop-challenge
 2. **Install Dependencies:**
-pipenv install
-3. **Activate the Virtual Environment:**
-pipenv shell
+   ```bash
+   pipenv install
+4. **Activate the Virtual Environment:**
+   ```bash
+   pipenv shell
 
 ### Running Tests
+```bash
 python -m pytest tests/ -v
 
 ### Running the Debug Script
