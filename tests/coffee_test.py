@@ -14,9 +14,9 @@ def test_coffee_name_immutable():
 
 def test_coffee_name_invalid():
     with pytest.raises(ValueError):
-        Coffee("Ab") 
+        Coffee("Ab")
     with pytest.raises(ValueError):
-        Coffee(123)   
+        Coffee(123)
 
 def test_coffee_orders():
     coffee = Coffee("Espresso")

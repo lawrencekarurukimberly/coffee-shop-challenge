@@ -15,15 +15,15 @@ def test_order_invalid_price_range():
     customer = Customer("Alice")
     coffee = Coffee("Latte")
     with pytest.raises(ValueError):
-        Order(customer, coffee, 11.0)  
+        Order(customer, coffee, 11.0)
     with pytest.raises(ValueError):
-        Order(customer, coffee, 0.5)  
+        Order(customer, coffee, 0.5)
 
 def test_order_invalid_price_type():
     customer = Customer("Alice")
     coffee = Coffee("Latte")
     with pytest.raises(ValueError):
-        Order(customer, coffee, "5.0")  
+        Order(customer, coffee, "5.0")
 
 def test_order_invalid_customer_coffee():
     coffee = Coffee("Espresso")
